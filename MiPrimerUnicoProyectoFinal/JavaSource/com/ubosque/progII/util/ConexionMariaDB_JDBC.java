@@ -20,7 +20,7 @@ public class ConexionMariaDB_JDBC {
 	public static Connection GetConnection() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mariadb:localhost:3306/mi_primera_base_de_datos","root","123456");
+			Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mi_primera_base_de_datos","root","123456");
 			return connection;
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

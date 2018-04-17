@@ -13,11 +13,12 @@ public class EquipoFacade {
 	public EquipoFacade()
 	{
 		ResourceBundle rb = ResourceBundle.getBundle("config");
-		String tipoBD = rb.getString("TipoBaseDatos");
-		if(tipoBD != null && tipoBD.equals("1"))		
+		String tipoBD = rb.getString("tipoBaseDatos");
+		if(tipoBD != null && tipoBD.equals("1")) {
 			dao = new EquipoDAO_BDLocal();
-		else
+		}else if(tipoBD != null && tipoBD.equals("2")) {
 			dao = new EquipoDAO_BDMariaDB_JDBC();
+		}
 	}
 
 	public IEquipoDAO getDao()
