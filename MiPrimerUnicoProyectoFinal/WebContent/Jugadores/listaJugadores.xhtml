@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Lista Equipos</title>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+</h:head>
+<body>
+	<h:form>
+		<h:outputLabel value="Consulta De Jugadores" />
+
+		<h:panelGrid columns="2">
+			<h:commandLink action="#{jugadorMB.consultarJugador()}">
+				<i class="fa fa-edit"></i>
+			</h:commandLink>
+			<h:commandLink action="#{jugadorMB.iniciarJugadorCreacion()}">
+				<i class="fa fa-plus-circle"></i>
+			</h:commandLink>
+
+		</h:panelGrid>
+
+		<h:panelGrid>
+
+			<h:dataTable value="#{jugadorMB.jugadorLista}" var="fila">
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Id" />
+					</f:facet>
+					<h:outputLabel value="#{fila.id}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nombre" />
+					</f:facet>
+					<h:outputLabel value="#{fila.nombre}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Equipo" />
+					</f:facet>
+					<h:outputLabel value="#{fila.equipo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Documento" />
+					</f:facet>
+					<h:outputLabel value="#{fila.documento}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Posición" />
+					</f:facet>
+					<h:outputLabel value="#{fila.posicion}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Fecha nacimiento" />
+					</f:facet>
+					<h:outputLabel value="#{fila.fechaNacimiento}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputLabel>
+				</h:column>				
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Editar" />
+					</f:facet>
+					<h:commandLink action="/Jugadores/modificaJugadores.xhtml">
+						<i class="fa fa-edit"></i>
+					<f:setPropertyActionListener value="#{fila}" target="#{jugadorMB.jugadorModificacion}"/>
+					</h:commandLink>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Eliminar" />
+					</f:facet>
+					<h:commandLink action="#{jugadorMB.eliminarJugador()}">
+						<i class="fa fa-trash"></i>
+					<f:setPropertyActionListener value="#{fila}" target="#{jugadorMB.jugadorEliminacion}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+
+		</h:panelGrid>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:form>
+		<h:outputLabel value="Antiguo Equipo" />
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Id" />
+			<h:inputText value="#{equipoMB.equipoModificacion.id}" disabled="true"/>
+
+			<h:outputLabel value="Nombre" />
+			<h:inputText value="#{equipoMB.equipoModificacion.nombre}" />
+
+			<h:outputLabel value="tecnico" />
+			<h:inputText value="#{equipoMB.equipoModificacion.tecnico}" />
+
+			<h:outputLabel value="Fundación (DD/MM/yyyy)" />
+			<h:inputText value="#{equipoMB.equipoModificacion.fechaFundacion}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:inputText>
+
+		</h:panelGrid>
+		
+		<h:commandButton action="#{equipoMB.actualizarEquipo()}" value="Guardar" />
+	</h:form>
+</body>
+</html>
