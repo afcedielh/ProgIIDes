@@ -22,7 +22,7 @@ public class JugadorMB {
 		return "/Jugadores/creaJugador.xhtml";
 	}
 	
-	public String crearEquipo()
+	public String crearJugador()
 	{
 		logica.createJugador(JugadorCreacion);
 		

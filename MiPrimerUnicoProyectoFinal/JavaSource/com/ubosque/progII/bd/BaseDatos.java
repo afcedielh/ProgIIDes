@@ -26,13 +26,13 @@ public class BaseDatos {
 		listaEquipos.add(equipo3);
 		// Sección datos jugadores
 		cal.set(1980, 0, 1);
-		listaJugador.add(new Jugador(1, "Falcao Garcia", "Colombia", cal.getTime(), "10515484", "Delantero"));
+		//listaJugador.add(new Jugador(1, "Falcao Garcia", "Colombia", cal.getTime(), "10515484", "Delantero"));
 		cal.set(1991, 0, 1);
-		listaJugador.add(new Jugador(2, "James", "Colombia", cal.getTime(), "10515484", "Delantero"));
+		//listaJugador.add(new Jugador(2, "James", "Colombia", cal.getTime(), "10515484", "Delantero"));
 		cal.set(1980, 0, 1);
-		listaJugador.add(new Jugador(3, "Messi", "Argentina", cal.getTime(), "10515484", "Volante"));
+		///listaJugador.add(new Jugador(3, "Messi", "Argentina", cal.getTime(), "10515484", "Volante"));
 		cal.set(1981, 0, 1);
-		listaJugador.add(new Jugador(4, "Cristiano Ronaldo", "Argentina", cal.getTime(), "10515484", "Delantero"));
+		//listaJugador.add(new Jugador(4, "Cristiano Ronaldo", "Argentina", cal.getTime(), "10515484", "Delantero"));
 	}
 
 	// permite verificar si la base de datos esta instanciada o no

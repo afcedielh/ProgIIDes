@@ -6,12 +6,12 @@ public class Jugador {
 		
 		private int id;
 		private String nombre;
-		private String Equipo;
+		private Equipo Equipo;
 		private Date FechaNacimiento;
 		private String Documento;
 		private String Posicion;			
 		
-		public Jugador(int id, String nombre, String equipo, Date fechaNacimiento, String documento, String posicion) {
+		public Jugador(int id, String nombre, Equipo equipo, Date fechaNacimiento, String documento, String posicion) {
 			super();
 			this.id = id;
 			this.nombre = nombre;
@@ -40,11 +40,11 @@ public class Jugador {
 			this.nombre = nombre;
 		}
 
-		public String getEquipo() {
+		public Equipo getEquipo() {
 			return Equipo;
 		}
 
-		public void setEquipo(String equipo) {
+		public void setEquipo(Equipo equipo) {
 			Equipo = equipo;
 		}
 
